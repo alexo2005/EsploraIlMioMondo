@@ -1,0 +1,747 @@
+ <html lang="it">
+	 
+    <head>
+
+    <!-- Imposta l'icona della pagina web -->
+    <link rel="icon" href="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Icona.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Icona.ico" type="image/x-icon">
+	
+    <!-- Importa la famiglia di caratteri "Lato" da Google Fonts con pesi 400 e 700 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+	
+	<!-- Per includere le icone Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>Esplora il mio mondo</title>
+	
+    <style>
+	
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+	
+	/* Impostazioni del font della pagina web*/
+    body {
+    font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Stile del corpo della pagina */
+    body {
+    background-color: #f3f4f6; /* Grigio chiaro */
+    color: #333; /* Nero */
+    }
+
+    header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    }
+
+    /* Stile della barra di navigazione */
+    nav {
+    background-color: #34495e; /* Blu scuro */
+    padding: 20px;
+    text-align: center;
+    }
+
+    /* Stile dei link nella barra di navigazione */
+    nav a {
+    color: #ecf0f1; /* Bianco grigio */
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+    background-color: #2c3e50;
+    }
+	
+    section {
+    padding: 20px;
+    margin: 20px;
+	display: none;	
+    }
+
+    #titolo-chi-sono {
+    color: #2d3e50;
+    }
+		
+    #ambizioni {
+    text-align: center; 
+    margin: 0 auto; 
+    max-width: 1000px; 
+    padding: 20px; 
+    }	
+		
+    #bagaglio-culturale {
+    padding: 60px 0;
+    }
+
+    .container {
+    max-width: 900px;
+    margin: -50px auto 8 auto;
+    text-align: center;
+    }
+
+    .section-title {
+    color: #2d3e50;
+    font-size: 20px;
+    margin-bottom: 40px;
+	text-align: center;
+    }
+
+    .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    justify-items: center;
+    }
+
+    .item {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 2px solid #2d3e50;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    }
+
+    .item:hover {
+    transform: translateY(-5px);
+    }
+
+    .icon {
+    background-color: #2d3e50;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; 
+    }
+
+    .icon i {
+    color: #fff;
+    font-size: 28px;
+    }
+
+    .item h3 {
+    color: #2d3e50;
+    font-size: 22px;
+    margin-bottom: 10px;
+    }
+
+    .item p {
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    }
+
+    #titolo-ambizioni {
+    color: #2d3e50; 
+    }
+
+    #home {
+    display: block;
+    }
+		
+    .slider-container {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+    border-radius: 10px;
+    }
+
+    .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+    width: 100%;
+    height: auto;
+    }
+
+    .home-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-content h2 {
+    color: #2d3e50;
+    }
+
+    .home-content p {
+    color: #1a1a1a;
+    font-size: 18px;
+    line-height: 1.6;
+    }
+
+    .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2d3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+    background-color: #34495e;
+    }
+		
+    .arrow {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    }
+
+    .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+    left: 10px;
+    }
+
+    .next {
+    right: 10px;
+    }
+		
+    section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+    section.active {
+    opacity: 1;
+    transform: translateY(0);
+	}
+
+    #home {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+    }
+	
+	.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+	}
+
+    .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+	}
+
+    .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+	}
+
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px; 
+	}
+
+    .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    }
+
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px; 
+    }
+
+    .table {
+    width: 175px;
+    height: 175px;
+    background-color: #fff;
+    border: 2px solid #2d3e50;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    margin: 4px 10px; 
+    flex: 1;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .table:hover {
+    transform: scale(1.05);
+    border-color: #ffd700; 
+    }
+
+
+    .table-content {
+    text-align: center;
+    padding: 20px;
+    }
+
+    .table h3 {
+    color: #2d3e50;
+    }
+
+    .table p {
+    color: #1a1a1a;
+    }
+
+
+    @media (max-width: 768px) {
+    .row {
+    flex-direction: column;
+    align-items: center;
+    }
+    }
+    }
+	 
+	.table {
+    border: 2px solid #2d3e50;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s ease-in-out;
+    margin: 10px;
+    flex: 1;
+    }
+
+    .table:hover {
+    border-color: #ffd700;
+    }
+
+    .table-content {
+    text-align: center;
+    padding: 20px;
+	}
+
+    .table h3 {
+    color: #2d3e50;
+    }
+
+    .table p {
+    color: #1a1a1a;
+    }
+	
+    footer {
+    background-color: #2d3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+    }
+		
+    .home-content {
+    text-align: center;
+    max-width: 690px;
+    margin: 20px auto;
+    padding: 40px;
+	border: 2px solid #2d3e50;
+    background-color: #f9f9f9; 
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+	}
+	
+    .home-content h2 {
+    color: #2d3e50;
+    font-size: 28px; 
+    margin-bottom: 20px; 
+    }
+	
+    .home-content p {
+    color: #666; 
+    font-size: 18px; 
+    line-height: 1.6;
+    }
+
+    .cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #2d3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    }	
+
+    .cta-button:hover {
+    background-color: #34495e;
+    }
+		
+    </style>
+	
+    </head>
+	
+    <body>
+	
+    <header>
+    <h1>Esplora il mio mondo</h1>
+    </header>
+
+    <!-- Barra di navigazione -->
+    <nav>
+    <a href="#home">| Home |</a>
+    <a href="#chi-sono">| Chi sono |</a>
+    <a href="#bagaglio-culturale">| Bagaglio culturale |</a>
+    <a href="#competenze">| Competenze |</a>
+    <a href="#ambizioni">| Ambizioni |</a>
+    </nav>
+
+    <!-- Sezione "Home" -->
+    <section id="home">
+    <!-- Contenuto della sezione "Home" con i contatti -->
+    <div class="home-content">
+    <h2>Benvenuto nel mio Sito Web!</h2>
+    <p>"Ciao a tutti, sono Alessandro Mastrapasqua, uno studente appassionato di Informatica, pronto a condividere il mio entusiasmante percorso e le prospettive future. Ti invito calorosamente a esplorare il mio affascinante universo sul mio sito web e a lasciarti ispirare dalle mie passioni."</p>
+    <!-- Informazioni di contatto inserite direttamente nella tabella -->
+    <div class="table-container">
+    <a href="#chi-sono" class="cta-button">Scopri di più</a>
+	<p> </p>
+    <h2>Per qualsiasi cosa potete contattarmi tramite:</h2>
+    <p><i class="material-icons">email</i>Indirizzo email: alex2005luca@gmail.com</i></p>
+    <p><i class="material-icons">phone</i>Contatto telefonico: +39 389 269 7231</p>
+	<p><i class="material-icons">person</i>Instagram: alessandro_05_</p>
+    </div>
+    </div>
+	<P>.</P>
+	<p>.</p>
+	</section>
+
+    <section id="chi-sono" style="display: flex; flex-direction: row;">
+	<!-- Contenuto testuale -->
+    <div style="flex: 1;">
+    <h2 id="titolo-chi-sono">Chi sono:</h2>
+    <p>Mi chiamo Alessandro Mastrapasqua, ho 18 anni e vivo a Settimo Torinese.</p>
+    <p>Attualmente, sto completando il mio quinto anno di studi superiori presso l'Istituto di </p>
+    <p>Istruzione Superiore "Giuseppe Peano", specializzandomi in Informatica e Telecomunicazioni.</p>
+    <p>Sono appassionato di viaggi e mi piace esplorare il mondo, visitando posti nuovi e scoprendo culture diverse. </p>
+    <p>Questa passione per il viaggio ha arricchito la mia prospettiva e ha contribuito alla mia crescita personale.</p>
+    <p>Studiare Informatica e Telecomunicazioni è una sfida che affronto con entusiasmo.</p> 
+    <p>La tecnologia mi affascina, e sono determinato a approfondire le mie conoscenze in questo settore in rapida evoluzione.</p>
+    <p>Oltre agli studi, cerco sempre nuove opportunità per ampliare le mie esperienze e competenze,</p>
+    <p>e proprio per questo, sono aperto a nuove amicizie, nuove sfide e nuove avventure.</p>
+    <p>Aggiungo, inoltre, che mi piace vestirmi bene e seguire le ultime tendenze della moda.</p>
+    </div>
+    <div class="slider-container" style="flex: 1;">
+    <!-- Slider di immagini -->
+    <div class="slider">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine1.jpg" alt="Immagine 1">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine2.jpg" alt="Immagine 2">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine3.jpg" alt="Immagine 3">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine4.jpg" alt="Immagine 4">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine5.jpg" alt="Immagine 5">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine6.jpg" alt="Immagine 6">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine7.jpg" alt="Immagine 7">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine8.JPG" alt="Immagine 8">
+    <img src="C:\Users\lenovo\OneDrive\Desktop\Immagini_Sito_Web\Immagine9.jpg" alt="Immagine 9">
+    </div>
+    <!-- Frecce di navigazione -->
+    <button class="arrow next" onclick="nextSlide()">&#9655;</button>
+    <button class="arrow prev" onclick="prevSlide()">&#9665;</button>
+	</div>
+    </section>
+	
+    <section id="bagaglio-culturale" class="section">
+    <div class="container">
+    <div class="content">
+	<!-- Primo elemento: Esperienza Teatrale -->
+    <div class="item">
+    <div class="icon">
+    <i class="material-icons">theater_comedy</i>
+    </div>
+    <h3>Esperienza Teatrale</h3>
+    <p>Ho frequentato un corso di teatro che ha sviluppato la mia creatività e migliorato le mie capacità comunicative e di collaborazione.</p>
+    </div>
+	<!-- Secondo elemento: Esperienza Lavorativa -->
+    <div class="item">
+    <div class="icon">
+    <i class="material-icons">work</i>
+    </div>
+    <h3>Esperienza Lavorativa</h3>
+    <p>Ho lavorato come educatore d'infanzia in una scuola d'asilo a Settimo Torinese, dove ho imparato a comunicare con chiarezza e a creare attività coinvolgenti per i bambini.</p>
+    </div>
+    <div class="item">0
+    <div class="icon">
+    <i class="material-icons">event</i>
+    </div>
+    <h3>Eventi e Concorsi</h3>
+    <p>Ho partecipato all'evento "HackersGen" a Bergamo, mettendo in gioco le mie competenze informatiche e interagendo con professionisti del settore IT.</p>
+    </div>
+    <div class="item">
+    <div class="icon">
+    <i class="material-icons">business</i>
+    </div>
+    <h3>Visita Aziendale</h3>
+    <p>Ho effettuato una visita osservativa presso la sede aziendale di Sistemi S.p.A. a Collegno, arricchendo la mia comprensione pratica del mondo lavorativo.</p>
+    </div>
+	<div class="item">
+    <div class="icon">
+    <i class="material-icons">laptop_mac</i>
+    </div>
+    <h3>Progetto scolastico</h3>
+    <p>Ho partecipato al progetto scolastico 'Peano Sub' occupandomi della gestione dei servizi e del monitoraggio degli obiettivi. In questa esperienza, ho imparato a pianificare, assegnare compiti e monitorare il progresso del lavoro.</p>
+    </div>
+	<div class="item">
+    <div class="icon">
+    <i class="material-icons">map</i>
+    </div>
+    <h3>Esplorazioni sul Territorio</h3>
+    <p>Ho partecipato al corso di esplorazioni territoriali organizzato dalla mia scuola nella città di Torino. Quest'esperienza mi ha offerto l'opportunità di conoscere meglio la mia città e di esplorarla in modo più approfondito.</p>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="competenze">
+    <div class="table-container">
+    <!-- Cinque tabelle superiori -->
+    <div class="row">
+    <div class="table">
+    <div class="table-content">
+    <h3>Teamwork:</h3>
+    <p>Collaboro con gli altri, ascoltando le loro opinioni e contribuendo al successo del gruppo.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Comunicazione:</h3>
+    <p>Esprimo chiaramente le idee, ascolto attentamente e adatto il mio stile comunicativo al contesto.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Flessibilità:</h3>
+    <p>Sono una persona flessibile che si adatta facilmente ai cambiamenti.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Creatività:</h3>
+    <p>Sono creativo nel pensiero, generando idee originali per risolvere problemi.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Organizzazione:</h3>
+    <p>Sono organizzato e gestisco il mio tempo in modo efficiente.</p>
+    </div>
+    </div>
+    </div>
+    <!-- Cinque tabelle inferiori -->
+    <div class="row">
+    <div class="table">
+    <div class="table-content">
+    <h3>Pazienza:</h3>
+    <p>Affronto con calma le sfide che richiedono tempo e perseveranza.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Risoluzione dei Problemi:</h3>
+    <p>Eccello nell'individuare soluzioni efficaci e alternative per sfide complesse.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Competenze digitali:</h3>
+    <p>Possiedo una padronanza completa del computer e una navigazione abile del browser.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Programmazione:</h3>
+    <p>Ho competenze approfondite nella programmazione HTML e CSS.</p>
+    </div>
+    </div>
+    <div class="table">
+    <div class="table-content">
+    <h3>Lingue straniere:</h3>
+    <p>Possiedo competenze linguistiche in Italiano e Inglese (livello B2).</p>
+    </div>
+    </div>
+    </div>
+    </div>
+	</section>
+
+    <section id="ambizioni">
+    <h2 id="titolo-ambizioni">Le mie ambizioni:</h2>
+    <p>Le mie ambizioni future convergono verso una carriera in cui posso combinare la mia passione per il settore bancario con l'interesse</p>
+    <p>crescente nei confronti della giurisprudenza.</p>
+	<p>Fin dall'inizio, ho nutrito il sogno di lavorare in una banca, magari presso uno sportello, assistendo le persone nell'apertura di mutui o carte di credito.</p>
+	<p>Tuttavia, di recente, ho sviluppato una profonda affinità per la giurisprudenza, tanto che dopo il diploma, il mio obiettivo è iscrivermi all'Università di Giurisprudenza</p>
+	<p>con una particolare focalizzazione sul diritto per le imprese e le istituzioni.</p>
+	<p>La mia visione per il futuro è quella di unire queste due passioni, diventando un professionista che possiede una solida comprensione degli aspetti legali nel contesto bancario.</p>
+	<p>Vorrei contribuire all'ambiente finanziario attraverso la mia conoscenza dei processi bancari e delle leggi che li governano.</p>
+    <p>Tutte queste competenze mi consentiranno di offrire un supporto completo ai clienti, garantendo la conformità legale e fornendo servizi finanziari</p>
+    <p>con la massima trasparenza e sicurezza.</p>
+	<p>Sono entusiato di affrontare questo percorso di crescita personale e professionale, con l'obiettivo di costruire una carriera significativa e piacevole.</p>
+    </section>
+    <!-- Sezione "Gallery" -->
+	
+    <!-- Pagina (footer), diritti d'auotre sulla pagina web e quando è stata creata/aggironata -->
+    <footer>
+    © 2024 Mastrapasqua Alessandro - Copyright
+    </footer>
+	
+	<script>
+	
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('.slider img').length;
+    const slider = document.querySelector('.slider');
+
+    function showSlide(index) {
+    currentSlide = (index + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+    }
+
+    function prevSlide() {
+    showSlide(currentSlide - 1);
+    }
+
+    function nextSlide() {
+    showSlide(currentSlide + 1);
+    }
+		
+    </script>
+	
+    <script>
+	    
+    // Seleziona tutti gli elementi <a> all'interno della barra di navigazione
+    document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+    // Impedisce il comportamento predefinito del clic, evitando che il link reindirizzi la pagina
+    e.preventDefault();
+		  
+    // Nasconde tutte le sezioni nella pagina
+    document.querySelectorAll('section').forEach(section => {
+    section.style.display = 'none';
+    });
+
+    const targetSection = this.getAttribute('href').substring(1);
+	// Mostra solo la sezione di destinazione
+    document.getElementById(targetSection).style.display = 'block';
+				 
+    // Scorri la pagina in modo scorrevole (smooth) fino alla sezione di destinazione
+    document.getElementById(targetSection).scrollIntoView({
+    behavior: 'smooth'
+				 
+    });
+    });
+    });
+	
+    </script>
+	
+    <script>
+	
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+		
+    let targetSection;
+    if (this.classList.contains('cta-button')) {
+    targetSection = 'chi-sono';
+    }  else {
+    targetSection = this.getAttribute('href').substring(1);
+    }
+
+    document.querySelectorAll('section').forEach(section => {
+    section.style.display = 'none';
+    });
+
+    document.getElementById(targetSection).style.display = 'block';
+
+    document.getElementById(targetSection).scrollIntoView({
+    behavior: 'smooth'
+				 
+    });
+    });
+    });
+    });
+	
+    </script>
+	
+	<script>
+	
+	document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    let targetSection;
+    if (this.classList.contains('cta-button')) {
+    targetSection = 'chi-sono';
+    }  else {
+    targetSection = this.getAttribute('href').substring(1);
+    }
+
+    document.querySelectorAll('section').forEach(section => {
+    section.classList.remove('active');
+    });
+
+    document.getElementById(targetSection).classList.add('active');
+
+    document.getElementById(targetSection).scrollIntoView({
+    behavior: 'smooth'
+			 
+    });
+    });
+    });
+	});
+
+    </script>
+	
+    </body>
+	 
+    </html>
